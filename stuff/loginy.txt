@@ -1,0 +1,7 @@
+user:user - uprawnienia: user
+admin:admin - uprawnienia: admin
+root:root - uprawnienia: root
+teacher:teacher - uprawnienia: teacher
+blocked:blocked - uprawnienia: zablokowany
+inactive:inactive - uprawnienia: nieaktywny
+removed:removed - uprawnienia: usunięty
