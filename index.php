@@ -13,7 +13,7 @@
     header('Location: ./paneladmin');
     exit();
   }
-
+//w razie błędnego uzupełnienia formularza
   if (isset($_POST['email'])) {
     $walidacja_ok=true;
     $login=$_POST['login'];
@@ -40,7 +40,7 @@
       $walidacja_ok=false;
       $_SESSION['e_email']="Adres e-mail jest nieprawidłowy";
     }
-//popraawność hasło
+//poprawność hasła
     if ((strlen($haslo)<8) || (strlen($haslo)>20)) {
       $walidacja_ok=false;
       $_SESSION['e_haslo']="Hasło musi posiadać od 8 do 20 znaków";
