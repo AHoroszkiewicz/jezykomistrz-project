@@ -22,9 +22,9 @@
     $haslo=$_POST['password'];
     $haslo2=$_POST['password2'];
     $haslo_hash=password_hash($haslo, PASSWORD_ARGON2ID);
-    $captchakey="6Lfa_r4UAAAAALCG9wRjhhpalVtgvz5Jax876u6x";
-    $captchacheck=file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$captchakey.'&response='.$_POST['g-recaptcha-response']);
-    $answer=json_decode($captchacheck);
+    //$captchakey="captcha secet code";
+    //$captchacheck=file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$captchakey.'&response='.$_POST['g-recaptcha-response']);
+    //$answer=json_decode($captchacheck);
 //poprawność login
     if (strlen($login)<3 || (strlen($login)>15)) {
       $walidacja_ok=false;
@@ -54,11 +54,11 @@
       $walidacja_ok=false;
       $_SESSION['e_regulamin']="Potwierdź akceptację regulaminu";
     }
-//recaptcha
-    if ($answer->success==false) {
-      $walidacja_ok=false;
-      $_SESSION['e_captcha']="Potwierdź, że nie jesteś robotem";
-    }
+//recaptcha gdyby była
+    //if ($answer->success==false) {
+    //  $walidacja_ok=false;
+    //  $_SESSION['e_captcha']="Potwierdź, że nie jesteś robotem";
+    //}
 //połączenie z bazą
     require_once "danebazy.php";
     mysqli_report(MYSQLI_REPORT_STRICT);
@@ -89,7 +89,7 @@
           }
 
           if ($walidacja_ok==true) {
-            //tu będzie zapytanie do bazy z rejestracją
+            //zapytanie do bazy z rejestracją
             if ($polaczenie->query("INSERT INTO konta VALUES (NULL, '$login', '$haslo_hash', '$email', 1, 1, 0)")) {
               $_SESSION['udanarejestracja']=true;
               header('Location: udanarejestracja');
@@ -275,11 +275,11 @@
             <div class="text-center">
               <div class="g-recaptcha" data-sitekey="6Lfa_r4UAAAAANdQxi93U47sQ6s_vtzQPPNUkn8O"></div>
             </div>
-              <?php
-              if (isset($_SESSION['e_captcha'])) {
-                  echo '<div style="text-align: center" class="error">'.$_SESSION['e_captcha'].'</div>';
-                  unset($_SESSION['e_captcha']);
-                }
+            <?php //gdyby była captcha
+              //if (isset($_SESSION['e_captcha'])) {
+              //    echo '<div style="text-align: center" class="error">'.$_SESSION['e_captcha'].'</div>';
+              //    unset($_SESSION['e_captcha']);
+              //  }
             ?>
           </div>
           <div class="modal-footer">
@@ -430,7 +430,7 @@
     </footer>
 
     <script src="https://kit.fontawesome.com/1693fe6534.js" crossorigin="anonymous"></script>
-    <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+    <!--<script src='https://www.google.com/recaptcha/api.js' async defer></script>                     gdyby była captcha--> 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="./js/bootstrap.min.js"></script>
