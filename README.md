@@ -1,6 +1,6 @@
 # jezykomistrz-project
 
-#PL
+##PL
 
 projekt szkolny wykonany przeze mnie, https://github.com/Bus0la i https://github.com/KStolpe
 
@@ -9,7 +9,7 @@ projekt szkolny wykonany przeze mnie, https://github.com/Bus0la i https://github
 2. Zimportuj bazę danych z pliku stuff/baza_danych1.x.sql z kodowaniem utf-8
 3. Enjoy! Wszystkie loginy znajdziesz w pliku stuff/loginy.txt
 
-#EN (for now site is available only in polish language)
+##EN (for now site is available only in polish language)
 
 school project made by me, https://github.com/Bus0la and https://github.com/KStolpe
 
