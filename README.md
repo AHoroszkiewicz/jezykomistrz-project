@@ -10,7 +10,8 @@ Instrukcja:
 3. Enjoy! Wszystkie loginy znajdziesz w pliku stuff/loginy.txt
 
 ## EN 
-(for now site is available only in polish language).
+(for now site is available only in polish language)
+
 School project made by me, https://github.com/Bus0la and https://github.com/KStolpe
 
 Instruction:
