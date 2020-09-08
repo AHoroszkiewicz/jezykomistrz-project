@@ -9,8 +9,8 @@ Instrukcja:
 2. Zimportuj bazę danych z pliku stuff/baza_danych1.x.sql z kodowaniem utf-8
 3. Enjoy! Wszystkie loginy znajdziesz w pliku stuff/loginy.txt
 
-## EN (for now site is available only in polish language)
-
+## EN 
+(for now site is available only in polish language)
 School project made by me, https://github.com/Bus0la and https://github.com/KStolpe
 
 Instruction:
